@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - coin
+  - MovingPlatform
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Damageable
+  - Dead
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3374512863
+    locked: 0
+  - name: Background Decorations
+    uniqueID: 2342434727
+    locked: 0
+  - name: Platform
+    uniqueID: 387058503
+    locked: 0
+  - name: Enemy
+    uniqueID: 1340408223
+    locked: 0
+  - name: Player
+    uniqueID: 3842819037
+    locked: 0
+  - name: Foreground Decorations and PickUpItems
+    uniqueID: 2183685109
+    locked: 0
