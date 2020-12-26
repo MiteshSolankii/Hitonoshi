@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Boss_MeleeAttackStateData
   m_EditorClassIdentifier: 
   attackRadius: 1.3
-  attackDamage: 20
+  attackDamage: 10
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 2048

@@ -20,7 +20,7 @@ public class FallingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Invoke("DropPlatform", 0.5f);
+            Invoke("DropPlatform", 0.2f);
             Destroy(gameObject, 2f);
         }
     }

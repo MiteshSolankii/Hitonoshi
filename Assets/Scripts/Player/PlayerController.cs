@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
 
     public float moveInput;
-
+    [SerializeField]
     private bool isFacingRight = true;
     public bool isWalking;
     public bool isGrounded;
@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
     public Key followingKey;
 
-
+    [SerializeField] private bool isLevel4 = false;
 
     private void Awake()
     {
@@ -116,6 +116,12 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        if (isLevel4)
+        {
+            facingDirection *= -1;
+            isFacingRight = !isFacingRight;
+            transform.Rotate(0.0f, 180.0f, 0.0f);
+        }
         ableToMove = true;
         amountOfJumpLeft = amountOfJump;
        // wallHopDirection.Normalize();
@@ -539,6 +545,7 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(0.0f, 180.0f, 0.0f);
             CreatDustTrail();
         }
+        
        
     }
 
