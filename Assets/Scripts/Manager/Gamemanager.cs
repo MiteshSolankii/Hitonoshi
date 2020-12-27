@@ -27,25 +27,34 @@ public class Gamemanager : MonoBehaviour
   
 
     private PlayerController playerController;
+    private CursorShowHide cursor;
 
     void Start()
     {
         playerController = FindObjectOfType<PlayerController>();
         CVC = GameObject.Find("Player Camera").GetComponent<CinemachineVirtualCamera>();
+        cursor = FindObjectOfType<CursorShowHide>();
+        
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (isPaused )
             {
                 ResumeGame();
+                
+              
             }
             else
             {
                 PauseGame();
+               
+
             }
+
+            
         }
 
        
@@ -94,6 +103,8 @@ public class Gamemanager : MonoBehaviour
         playerController.ableToMove = false;
         UI_coin.SetActive(false);
         UI_healthBar.SetActive(false);
+        cursor.UnlockCursor();
+      
     }
 
    public void ResumeGame()
@@ -104,7 +115,9 @@ public class Gamemanager : MonoBehaviour
         playerController.ableToMove = true;
         UI_coin.SetActive(true);
         UI_healthBar.SetActive(true);
-    }
+        cursor.LockCursor();
+
+   }
 
    public void BackToMainMenu()
     {

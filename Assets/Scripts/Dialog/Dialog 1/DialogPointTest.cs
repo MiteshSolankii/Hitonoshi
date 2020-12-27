@@ -32,7 +32,8 @@ public class DialogPointTest : MonoBehaviour
         {
             isDialogActive = true;
             dialogTextBox.SetActive(true);
-         //   continueButton2.SetActive(true);
+            
+            //   continueButton2.SetActive(true);
 
         }
 
@@ -44,7 +45,8 @@ public class DialogPointTest : MonoBehaviour
         {
             isDialogActive = false;
             dialogTextBox.SetActive(false);
-           // continueButton2.SetActive(false);
+           
+            // continueButton2.SetActive(false);
 
 
         }

@@ -18,6 +18,7 @@ public class NpcDialog : MonoBehaviour
     private PlayerController playerController;
     private PlayerCombatController PCC;
     public GameObject GOA;
+    public GameObject UI_Coin, UI_Healthbar;
 
 
 
@@ -38,6 +39,8 @@ public class NpcDialog : MonoBehaviour
             {
                 continueButton.SetActive(true);
                 playerController.ableToMove = false;
+                CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
+                cursor.UnlockCursor();
 
             }
         }
@@ -67,7 +70,11 @@ public class NpcDialog : MonoBehaviour
             textDisplay.text = "";
             continueButton.SetActive(false);
             dBox.SetActive(false);
+            CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
+            cursor.LockCursor();
             //playerController.ableToMove = true;
+            UI_Coin.SetActive(false);
+            UI_Healthbar.SetActive(false);
             GOA.SetActive(true);
         }
     }

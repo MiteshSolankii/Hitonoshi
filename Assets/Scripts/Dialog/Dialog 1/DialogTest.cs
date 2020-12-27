@@ -36,7 +36,8 @@ public class DialogTest : MonoBehaviour
             {
                 continueButton.SetActive(true);
                 playerController.ableToMove = false;
-
+                CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
+                cursor.UnlockCursor();
             }
         }
     }
@@ -66,6 +67,8 @@ public class DialogTest : MonoBehaviour
             continueButton.SetActive(false);
             dBox.SetActive(false);
             playerController.ableToMove = true;
+            CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
+            cursor.LockCursor();
         }
     }
 }

@@ -41,6 +41,8 @@ public class BossDialog : MonoBehaviour
                 continueButton.SetActive(true);
                 playerController.ableToMove = false;
                 boss.stateMachine.ChangeState(boss.idleState);
+                CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
+                cursor.UnlockCursor();
 
             }
         }
@@ -71,10 +73,13 @@ public class BossDialog : MonoBehaviour
             continueButton.SetActive(false);
             dBox.SetActive(false);
             playerController.ableToMove = true;
+            CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
+            cursor.LockCursor();
             boss.stateMachine.ChangeState(boss.moveState);
             bossHealthBar.SetActive(true);
             gameObject.SetActive(false);
-            
+           
+
         }
     }
 }
