@@ -103,6 +103,7 @@ public class Gamemanager : MonoBehaviour
         playerController.ableToMove = false;
         UI_coin.SetActive(false);
         UI_healthBar.SetActive(false);
+       
         cursor.UnlockCursor();
       
     }
@@ -115,6 +116,7 @@ public class Gamemanager : MonoBehaviour
         playerController.ableToMove = true;
         UI_coin.SetActive(true);
         UI_healthBar.SetActive(true);
+       
         cursor.LockCursor();
 
    }

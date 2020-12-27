@@ -9851,7 +9851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  jumpForce: 24
+  jumpForce: 25
   wallSlideSpeed: 5
   variableJumpHeight: 0.5
   dashTime: 0.2
@@ -9864,6 +9864,7 @@ MonoBehaviour:
   wallJumpDirection: {x: 0.31622776, y: 0.94868326}
   knockbackSpeed: {x: 4, y: 9}
   moveInput: 0
+  isFacingRight: 1
   isWalking: 0
   isGrounded: 0
   isWallSliding: 0
@@ -9880,6 +9881,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   ableToMove: 0
   followingKey: {fileID: 0}
+  isLevel4: 0
 --- !u!114 &6424810018174320420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9894,7 +9896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatEnabled: 1
   inputTimer: 0.2
-  attack1Radius: 0.5
+  attack1Radius: 0.63
   attack1Damage: 10
   attack1HitBoxPos: {fileID: 6424810017492565411}
   whatIsDamageable:

@@ -581,7 +581,7 @@ public class PlayerController : MonoBehaviour
     }
 
    void DialogAction()
-    {
+   {
         if (!ableToMove)
         {
             
@@ -603,11 +603,11 @@ public class PlayerController : MonoBehaviour
             moveInput = Input.GetAxisRaw("Horizontal");
             PCC.combatEnabled = true;
             dashSpeed = 40f;
-            jumpForce = 24f;
+            jumpForce = 25f;
             canFlip = true;
             canNormalJump = true;
         }
-    }
+   }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

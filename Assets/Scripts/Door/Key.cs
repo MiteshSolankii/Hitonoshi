@@ -13,10 +13,11 @@ public class Key : MonoBehaviour
 
     public GameObject UI_keyImage = null;
 
-
+    private Gamemanager gameManager;
     void Start()
     {
         anim = GetComponent<Animator>();
+        gameManager = FindObjectOfType<Gamemanager>();
     }
 
     // Update is called once per frame
@@ -25,7 +26,14 @@ public class Key : MonoBehaviour
         if (isFollowing)
         {
             anim.enabled = false;
-            UI_keyImage.SetActive(true);
+            if (!gameManager.isPaused)
+            {
+                UI_keyImage.SetActive(true);
+            }
+            else
+            {
+                UI_keyImage.SetActive(false);
+            }
             transform.position = Vector3.Lerp(transform.position, followTarget.position, followSpeed * Time.deltaTime);
         }
         else

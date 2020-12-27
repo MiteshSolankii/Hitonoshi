@@ -86,7 +86,7 @@ public class Scenemanager : MonoBehaviour
     void LoadQuitGame()
     {
         Application.Quit();
-        EditorApplication.isPlaying = false;
+       // EditorApplication.isPlaying = false;
 
     }
     void LoadRetryGame()
