@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0870c59797f3fb4f888c921b60e4107, type: 3}
   m_Name: Boss_BaseData
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 80
   damageHopSpeed: 0
   wallCheckDistance: 0.2
   ledgeCheckDistance: 1
