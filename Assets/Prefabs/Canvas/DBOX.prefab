@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Well, well, well, If this aint the invisible cunt.
+  m_text: Well, well, well, If this aint the invisible man.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ac350d6f81f7d27468b262e3b944b138, type: 2}
   m_sharedMaterial: {fileID: 3657065902918833246, guid: ac350d6f81f7d27468b262e3b944b138, type: 2}

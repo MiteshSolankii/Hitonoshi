@@ -23,7 +23,14 @@ public class NpcDialogPoint : MonoBehaviour
         
 
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            MusicManager music = FindObjectOfType<MusicManager>();
+            music.FinalMusic();
+        }
+    }
     private void OnTriggerStay2D(Collider2D trig)
     {
 
@@ -32,7 +39,6 @@ public class NpcDialogPoint : MonoBehaviour
         {
             isDialogActive = true;
             dialogTextBox.SetActive(true);
-
         }
 
     }
@@ -43,6 +49,7 @@ public class NpcDialogPoint : MonoBehaviour
         {
             isDialogActive = false;
             dialogTextBox.SetActive(false);
+            
 
 
         }

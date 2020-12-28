@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0870c59797f3fb4f888c921b60e4107, type: 3}
   m_Name: FB_BaseData
   m_EditorClassIdentifier: 
-  maxHealth: 95
+  maxHealth: 10
   damageHopSpeed: 10
   wallCheckDistance: 0.2
   ledgeCheckDistance: 1
   groundCheckRadius: 0.3
-  minAgroDistance: 8
-  maxAgroDistance: 9
+  minAgroDistance: 13
+  maxAgroDistance: 15
   stunResistance: 0
   stunRecoveryTime: 0
   hitParticle: {fileID: 5084310176191368999, guid: 5555a671618b39644bdb04b0f41554ad, type: 3}

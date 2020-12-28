@@ -6,6 +6,7 @@ public class MusicManager : MonoBehaviour
 {
     public AudioSource musicPlayer;
     public AudioClip[] audioClip;
+    public AudioClip finaleClip;
     void Start()
     {
         musicPlayer.clip = audioClip[Random.Range(0, audioClip.Length)];
@@ -29,4 +30,13 @@ public class MusicManager : MonoBehaviour
         musicPlayer.Play();
         Debug.Log("current track is " + musicPlayer.clip.name);
     }
+
+  public void FinalMusic()
+  {
+        musicPlayer.Stop();
+        musicPlayer.clip = finaleClip;
+        musicPlayer.Play();
+        Debug.Log("current track is " + musicPlayer.clip.name);
+
+  }
 }

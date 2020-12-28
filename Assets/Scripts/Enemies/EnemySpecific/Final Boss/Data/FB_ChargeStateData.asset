@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FB_ChargeStateData
   m_EditorClassIdentifier: 
   chargeSpeed: 6
-  chargeTime: 2
+  chargeTime: 2.5

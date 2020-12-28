@@ -35,12 +35,14 @@ public class NpcDialog : MonoBehaviour
     {
         if (npcDialogPoint.isDialogActive == true)
         {
+            
             if (textDisplay.text == sentences[index])
             {
                 continueButton.SetActive(true);
                 playerController.ableToMove = false;
                 CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
                 cursor.UnlockCursor();
+                
 
             }
         }

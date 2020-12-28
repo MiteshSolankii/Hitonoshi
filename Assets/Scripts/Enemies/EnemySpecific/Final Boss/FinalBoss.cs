@@ -43,7 +43,7 @@ public class FinalBoss : Entity
         deadState = new FB_DeadState(this, stateMachine, "dead", deadStateData, this);
         chargeState = new FB_ChargeState(this, stateMachine, "charge", chargeStateData, this);
 
-        stateMachine.Initialize(idleState);
+        stateMachine.Initialize(moveState);
     }
     public override void Update()
     {
