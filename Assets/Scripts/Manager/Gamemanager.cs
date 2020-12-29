@@ -122,12 +122,12 @@ public class Gamemanager : MonoBehaviour
    }
 
    public void BackToMainMenu()
-    {
+   {
         Time.timeScale = 1f;
-        Scenemanager.instance.SaveGameData();
+      Scenemanager.instance.SaveGameData();
         SceneManager.LoadScene("Main Menu");
 
-    }
+   }
 
     #endregion
 }

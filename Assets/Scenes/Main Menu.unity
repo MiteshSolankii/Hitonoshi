@@ -580,12 +580,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4264304783940669321, guid: eb2862e6718e196469217f19dfd69397, type: 3}
       propertyPath: audioClip.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4264304783940669321, guid: eb2862e6718e196469217f19dfd69397, type: 3}
       propertyPath: audioClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 022b26c15d7dcb34e8df8d7a6a965a6b, type: 3}
+      objectReference: {fileID: 8300000, guid: 013cc5f5da282b44d8dd04bb8e26c231, type: 3}
     - target: {fileID: 4264304783940669321, guid: eb2862e6718e196469217f19dfd69397, type: 3}
       propertyPath: audioClip.Array.data[1]
       value: 
@@ -641,6 +641,10 @@ PrefabInstance:
     - target: {fileID: 4264304785144804702, guid: eb2862e6718e196469217f19dfd69397, type: 3}
       propertyPath: m_Volume
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4264304785144804702, guid: eb2862e6718e196469217f19dfd69397, type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb2862e6718e196469217f19dfd69397, type: 3}
@@ -857,6 +861,10 @@ PrefabInstance:
       propertyPath: continueButton
       value: 
       objectReference: {fileID: 329141161}
+    - target: {fileID: 5649049872187748660, guid: 0a555aa5194a8ae46919c2281620e1b9, type: 3}
+      propertyPath: sceneToContinue
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5649049872187748661, guid: 0a555aa5194a8ae46919c2281620e1b9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
