@@ -32,13 +32,13 @@ public class Scenemanager : MonoBehaviour
     private void Update()
     {
         
-/*
+    /*
         if (Input.GetKeyDown(KeyCode.L))
         {
             PlayerPrefs.DeleteAll();
             Debug.Log("Save Deleted");
         }
-       */
+    */     
     }
 
     public void NewGame()

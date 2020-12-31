@@ -9853,11 +9853,11 @@ MonoBehaviour:
   moveSpeed: 6
   jumpForce: 25
   wallSlideSpeed: 5
-  variableJumpHeight: 0.5
+  variableJumpHeight: 0.65
   dashTime: 0.2
   dashSpeed: 40
   distanceBetweenImages: 0.4
-  dashCoolDown: 2.5
+  dashCoolDown: 1.2
   facingDirection: 1
   wallJumpForce: 28
   knockbackDuration: 0.35
