@@ -169,23 +169,25 @@ public class PlayerController : MonoBehaviour
 
         moveInput = joystick.Horizontal;
 
-       // playerRb.velocity = (Vector2.right * moveInput  * Time.deltaTime);
-       // Debug.Log(moveInput);
+        // playerRb.velocity = (Vector2.right * moveInput  * Time.deltaTime);
+        // Debug.Log(moveInput);
 
-      /*  if (Input.GetButtonDown("Jump"))
-        {
-            if(isGrounded || (amountOfJumpLeft) > 0 && !isTouchingWall)
-            {
-                NormalJump();
-                
-            }
-            else
-            {
-                jumpTimer = jumpTimerSet;
-                isAttemptingToJump = true;
-            }
-        }
-     */
+        /*  if (Input.GetButtonDown("Jump"))
+          {
+              if(isGrounded || (amountOfJumpLeft) > 0 && !isTouchingWall)
+              {
+                  NormalJump();
+
+              }
+              else
+              {
+                  jumpTimer = jumpTimerSet;
+                  isAttemptingToJump = true;
+              }
+          }
+       */
+
+       
         if( /*Input.GetButtonDown("Horizontal")*/ moveInput != 0 && isTouchingWall)
         {
             if(!isGrounded && moveInput != facingDirection)
