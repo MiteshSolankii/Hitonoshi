@@ -11,14 +11,14 @@ public class NpcDialog : MonoBehaviour
     private int index;
     public float typingSpeed;
 
-    public GameObject continueButton;
+    public GameObject continueButton, skipButton;
     public GameObject dBox;
 
     private NpcDialogPoint npcDialogPoint;
     private PlayerController playerController;
     private PlayerCombatController PCC;
     public GameObject GOA;
-    public GameObject UI_Coin, UI_Healthbar;
+    public GameObject UI_Coin, UI_Healthbar, mobileInput;
 
 
 
@@ -39,10 +39,12 @@ public class NpcDialog : MonoBehaviour
             if (textDisplay.text == sentences[index])
             {
                 continueButton.SetActive(true);
+                skipButton.SetActive(true);
                 playerController.ableToMove = false;
-                CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
-                cursor.UnlockCursor();
-                
+                mobileInput.SetActive(false);
+               // CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
+               //cursor.UnlockCursor();
+
 
             }
         }
@@ -72,12 +74,31 @@ public class NpcDialog : MonoBehaviour
             textDisplay.text = "";
             continueButton.SetActive(false);
             dBox.SetActive(false);
-            CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
-            cursor.LockCursor();
+            skipButton.SetActive(false);
+           // CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
+           // cursor.LockCursor();
             //playerController.ableToMove = true;
             UI_Coin.SetActive(false);
             UI_Healthbar.SetActive(false);
             GOA.SetActive(true);
         }
+    }
+
+    public void OnClickSkip()
+    {
+        this.GetComponent<NpcDialog>().enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        textDisplay.text = "";
+        continueButton.SetActive(false);
+        skipButton.SetActive(false);
+        dBox.SetActive(false);
+        UI_Coin.SetActive(false);
+        UI_Healthbar.SetActive(false);
+        GOA.SetActive(true);
+
+        Debug.Log("Script off");
     }
 }

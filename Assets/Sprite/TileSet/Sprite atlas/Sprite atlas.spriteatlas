@@ -40,6 +40,7 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 2800000, guid: 1cee332835b2b6640bee59db24c31d29, type: 3}
@@ -13991,5 +13992,6 @@ SpriteAtlas:
   - props1_138
   - props1_199
   - props1_198
+  m_RenderDataMap: {}
   m_Tag: Sprite atlas
   m_IsVariant: 0

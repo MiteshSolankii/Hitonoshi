@@ -10,7 +10,7 @@ public class Scenemanager : MonoBehaviour
     public static Scenemanager instance;
     AudioSource[] audioSource;
     public Animator anim;
-    public float transitionTime = 5f;
+    public float transitionTime = 1f;
     private int currentSceneIndex;
     public int sceneToContinue;
     public  GameObject continueButton;

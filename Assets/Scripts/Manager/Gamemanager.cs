@@ -21,6 +21,7 @@ public class Gamemanager : MonoBehaviour
 
     public GameObject pauseMenu;
     public GameObject UI_coin, UI_healthBar;
+    public GameObject mobileInput;
    // public GameObject dropKeyEnemy,key;
 
     public  bool isPaused;
@@ -33,7 +34,7 @@ public class Gamemanager : MonoBehaviour
     {
         playerController = FindObjectOfType<PlayerController>();
         CVC = GameObject.Find("Player Camera").GetComponent<CinemachineVirtualCamera>();
-        cursor = FindObjectOfType<CursorShowHide>();
+       // cursor = FindObjectOfType<CursorShowHide>();
         
     }
 
@@ -103,8 +104,9 @@ public class Gamemanager : MonoBehaviour
         playerController.ableToMove = false;
         UI_coin.SetActive(false);
         UI_healthBar.SetActive(false);
+        mobileInput.SetActive(false);
        
-        cursor.UnlockCursor();
+       // cursor.UnlockCursor();
       
     }
 
@@ -116,10 +118,10 @@ public class Gamemanager : MonoBehaviour
         playerController.ableToMove = true;
         UI_coin.SetActive(true);
         UI_healthBar.SetActive(true);
-       
-        cursor.LockCursor();
+        mobileInput.SetActive(true);
+        // cursor.LockCursor();
 
-   }
+    }
 
    public void BackToMainMenu()
    {

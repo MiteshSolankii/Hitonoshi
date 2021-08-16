@@ -40,7 +40,7 @@ public class PlayerCombatController : MonoBehaviour
     }
     private void Update()
     {
-        CheckCombatInput();
+      //  CheckCombatInput();
         CheckAttacks();
     }
 
@@ -52,14 +52,8 @@ public class PlayerCombatController : MonoBehaviour
             {
                 gotInput = true;
                 lastInputTime = Time.time;
-                
             }
-
-
         }
-
-       
-        
        
     }
 
@@ -150,6 +144,17 @@ public class PlayerCombatController : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(attack1HitBoxPos.position, attack1Radius);
+    }
+
+
+    public void OnClickAttackBtn()
+    {
+        if (combatEnabled)
+        {
+            gotInput = true;
+            lastInputTime = Time.time;
+
+        }
     }
 
     #region Audio

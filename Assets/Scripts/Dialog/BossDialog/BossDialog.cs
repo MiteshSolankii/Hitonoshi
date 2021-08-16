@@ -11,9 +11,10 @@ public class BossDialog : MonoBehaviour
     private int index;
     public float typingSpeed;
 
-    public GameObject continueButton;
+    public GameObject continueButton, skipButton;
     public GameObject dBox;
     public GameObject bossHealthBar;
+    public GameObject mobileControls;
    
 
     private BossDialogPoint bossDialogPoint;
@@ -39,10 +40,12 @@ public class BossDialog : MonoBehaviour
             if (textDisplay.text == sentences[index])
             {
                 continueButton.SetActive(true);
+                skipButton.SetActive(true);
                 playerController.ableToMove = false;
                 boss.stateMachine.ChangeState(boss.idleState);
-                CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
-                cursor.UnlockCursor();
+                mobileControls.SetActive(false);
+               // CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
+               // cursor.UnlockCursor();
 
             }
         }
@@ -71,10 +74,12 @@ public class BossDialog : MonoBehaviour
         {
             textDisplay.text = "";
             continueButton.SetActive(false);
+            skipButton.SetActive(false);
             dBox.SetActive(false);
             playerController.ableToMove = true;
-            CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
-            cursor.LockCursor();
+            mobileControls.SetActive(true);
+            // CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
+            // cursor.LockCursor();
             boss.stateMachine.ChangeState(boss.moveState);
             bossHealthBar.SetActive(true);
             gameObject.SetActive(false);
@@ -82,4 +87,25 @@ public class BossDialog : MonoBehaviour
 
         }
     }
+
+    public void OnClickSkip()
+    {
+        this.GetComponent<BossDialog>().enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        textDisplay.text = "";
+        continueButton.SetActive(false);
+        skipButton.SetActive(false);
+        dBox.SetActive(false);
+        playerController.ableToMove = true;
+        mobileControls.SetActive(true);
+        // CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
+        // cursor.LockCursor();
+        boss.stateMachine.ChangeState(boss.moveState);
+        bossHealthBar.SetActive(true);
+        gameObject.SetActive(false);
+    }
+
 }

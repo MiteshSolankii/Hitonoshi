@@ -11,8 +11,9 @@ public class DialogTest : MonoBehaviour
     private int index;
     public float typingSpeed;
 
-    public GameObject continueButton;
+    public GameObject continueButton,skipButton;
     public GameObject dBox;
+    public GameObject mobileInput;
 
     private DialogPointTest dialogPointTest;
     private PlayerController playerController;
@@ -35,9 +36,11 @@ public class DialogTest : MonoBehaviour
             if (textDisplay.text == sentences[index])
             {
                 continueButton.SetActive(true);
+                skipButton.SetActive(true);
                 playerController.ableToMove = false;
-                CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
-                cursor.UnlockCursor();
+                mobileInput.SetActive(false);
+                //CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
+                //cursor.UnlockCursor();
             }
         }
     }
@@ -67,8 +70,24 @@ public class DialogTest : MonoBehaviour
             continueButton.SetActive(false);
             dBox.SetActive(false);
             playerController.ableToMove = true;
-            CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
-            cursor.LockCursor();
+            mobileInput.SetActive(true);
+            // CursorShowHide cursor = FindObjectOfType<CursorShowHide>();
+            // cursor.LockCursor();
         }
+    }
+
+    public void OnClickSkip()
+    {
+        this.GetComponent<DialogTest>().enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        textDisplay.text = "";
+        continueButton.SetActive(false);
+        dBox.SetActive(false);
+        playerController.ableToMove = true;
+        mobileInput.SetActive(true);
+        Debug.Log("Script off");
     }
 }

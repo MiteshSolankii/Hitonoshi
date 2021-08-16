@@ -21,8 +21,6 @@ public class Door : MonoBehaviour
     {
         playerController = FindObjectOfType<PlayerController>();
         anim = GetComponent<Animator>();
-
-        
     }
 
     // Update is called once per frame
@@ -53,15 +51,17 @@ public class Door : MonoBehaviour
         if (doorOpen && Vector3.Distance(playerController.transform.position, transform.position) < 2f )
         {
             doorInputText.SetActive(true);
-            if (Input.GetKey(KeyCode.E))
-            {
-                SceneManager.LoadScene(sceneNumber);
-            }
+           
         }
         else
         {
             doorInputText.SetActive(false);
         }
+    }
+
+    public void EndLevel()
+    {
+        SceneManager.LoadScene(sceneNumber);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

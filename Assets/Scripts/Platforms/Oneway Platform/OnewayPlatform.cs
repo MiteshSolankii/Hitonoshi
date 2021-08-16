@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class OnewayPlatform : MonoBehaviour
 {
-    private PlatformEffector2D effector;
-    private float waitTime = 0.5f;
+    
+    public PlatformEffector2D effector;
+    public float waitTime = 0.5f;
 
     void Start()
     {
         effector = GetComponent<PlatformEffector2D>();
-        
     }
 
     // Update is called once per frame
@@ -37,5 +37,24 @@ public class OnewayPlatform : MonoBehaviour
         {
             effector.rotationalOffset = 0f;
         }
+
+       
+
+    }
+
+    public void OnHoldTimerFinished()
+    {
+      //  effector.rotationalOffset = 180f;
+        waitTime = 0f;
+       
+    }
+    public void OnHoldTimerUp()
+    {
+        waitTime = 0.5f;
+       
+    }
+    public void ResetOneWay()
+    {
+        effector.rotationalOffset = 0f;
     }
 }

@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput.PlatformSpecific;
+
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 7f;
     public float jumpForce = 25f;
     private float groundCheckRadius = 0.16f;
     private float wallCheckDistance = 0.23f;
@@ -105,6 +107,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private bool isLevel4 = false;
 
+    private DynamicJoystick joystick;
+
     private void Awake()
     {
         
@@ -112,6 +116,8 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         PCC = GetComponent<PlayerCombatController>();
+
+        joystick = FindObjectOfType<DynamicJoystick>();
     }
 
     void Start()
@@ -159,9 +165,14 @@ public class PlayerController : MonoBehaviour
 
     void CheckInput()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
+       //  moveInput = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump"))
+        moveInput = joystick.Horizontal;
+
+       // playerRb.velocity = (Vector2.right * moveInput  * Time.deltaTime);
+       // Debug.Log(moveInput);
+
+      /*  if (Input.GetButtonDown("Jump"))
         {
             if(isGrounded || (amountOfJumpLeft) > 0 && !isTouchingWall)
             {
@@ -174,8 +185,8 @@ public class PlayerController : MonoBehaviour
                 isAttemptingToJump = true;
             }
         }
-
-        if(Input.GetButtonDown("Horizontal") && isTouchingWall)
+     */
+        if( /*Input.GetButtonDown("Horizontal")*/ moveInput != 0 && isTouchingWall)
         {
             if(!isGrounded && moveInput != facingDirection)
             {
@@ -198,19 +209,20 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (checkJumpMultiplier && !Input.GetButton("Jump"))  // to vary jump height
+     /*   if (checkJumpMultiplier && !Input.GetButton("Jump"))  // to vary jump height
         {
             checkJumpMultiplier = false;
             playerRb.velocity = new Vector2(playerRb.velocity.x, playerRb.velocity.y * variableJumpHeight);
         }
+     */
 
-        if (Input.GetButtonDown("Dash"))
+      /*  if (Input.GetButtonDown("Dash"))
         {
             if (Time.time >= (lastDash + dashCoolDown))
                 
                 AttemptToDash();
         }
-
+      */
 
     }
 
@@ -299,17 +311,20 @@ public class PlayerController : MonoBehaviour
 
     void ApplyMovement()
     {
+       
         // can use && PCC.isAttacking == false in if statement but not working fine...
         if (!isGrounded && !isWallSliding && moveInput == 0 && !knockback)   //let go of movement when not pressing keys while jumping
         {
             playerRb.velocity = new Vector2(playerRb.velocity.x * airDrag, playerRb.velocity.y);
         }
+      
 
-        else if (canMove && !knockback)
+       else if (canMove && !knockback)
         {
-            playerRb.velocity = new Vector2(moveInput * moveSpeed, playerRb.velocity.y);
-            
-        }
+             playerRb.velocity = new Vector2(moveInput * moveSpeed, playerRb.velocity.y);
+           // playerRb.AddForce(Vector2.right * moveInput * moveSpeed,ForceMode2D.Impulse);
+           
+       }
 
         if (isWallSliding)
         {
@@ -600,7 +615,7 @@ public class PlayerController : MonoBehaviour
         else
         {
 
-            moveInput = Input.GetAxisRaw("Horizontal");
+            moveInput = joystick.Horizontal;
             PCC.combatEnabled = true;
             dashSpeed = 40f;
             jumpForce = 25f;
@@ -628,7 +643,45 @@ public class PlayerController : MonoBehaviour
        
     }
 
+
+    #region mobile input
+
    
+    public void OnClickJumpBtn()
+    {
+
+        Debug.Log("On Jump");
+       
+            if (isGrounded || (amountOfJumpLeft) > 0 && !isTouchingWall)
+            {
+                NormalJump();
+
+            }
+            else
+            {
+                jumpTimer = jumpTimerSet;
+                isAttemptingToJump = true;
+            }
+
+        //if (checkJumpMultiplier)  // to vary jump height
+        //{
+        //    checkJumpMultiplier = false;
+        //    playerRb.velocity = new Vector2(playerRb.velocity.x, playerRb.velocity.y * variableJumpHeight);
+        //}
+
+    }
+
+    public void OnClickDashBtn()
+    {
+        {
+            if (Time.time >= (lastDash + dashCoolDown))
+
+                AttemptToDash();
+        }
+    }
+
+    #endregion
+
     #region Audio
 
     void WalkSound()

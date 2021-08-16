@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CursorShowHide : MonoBehaviour
 {
-    public bool lockCursor = true;
+    public bool lockCursor = false;
     void Start()
     {
         if (lockCursor)
